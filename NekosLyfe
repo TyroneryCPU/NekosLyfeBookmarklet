@@ -1,0 +1,10 @@
+javascript:(function() {
+  fetch("https://nekos.life/api/v2/img/neko")
+    .then(response => response.json())
+    .then(data => {
+      var img = document.createElement("img");
+      img.src = data.url;
+      document.body.appendChild(img);
+    })
+    .catch(error => console.error(error));
+})();
